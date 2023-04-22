@@ -1,0 +1,218 @@
+---
+title: "project R ch(13)"
+author: "Ahmed elshaarawy"
+date: "11/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+project_stats <- read_csv("C:/Users/sony/Desktop/project stats.csv")
+View(project_stats)
+```
+
+```{r}
+range(project_stats$Price)
+range(project_stats$Mileage)
+range(project_stats$Year)
+```
+
+```{r}
+var(project_stats$Price)
+var(project_stats$Mileage)
+var(project_stats$Year)
+```
+
+```{r}
+sd(project_stats$Price)
+sd(project_stats$Mileage)
+sd(project_stats$Year)
+```
+
+```{r}
+IQR(project_stats$Price)
+IQR(project_stats$Mileage)
+IQR(project_stats$Year)
+```
+
+
+```{r}
+summary(project_stats, na.rm = T)
+```
+
+
+```{r}
+t = table(project_stats$Body, project_stats$Brand)
+```
+
+```{r}
+t
+```
+
+```{r}
+data <- data.frame(t)
+```
+
+
+```{r}
+data
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+ggplot(data, aes(y = Freq, x=Var2))+ 
+    geom_bar(aes(fill=Var1),position="dodge", stat="identity",)
+```
+```{r}
+t = table(project_stats$EngineV, project_stats$Registration)
+```
+
+```{r}
+t
+```
+
+```{r}
+data <- data.frame(t)
+```
+
+```{r}
+data
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+ggplot(data, aes(y = Freq, x=Var2))+ 
+    geom_bar(aes(fill=Var1),position="dodge", stat="identity",)
+```
+
+```{r}
+t = table(project_stats$Registration, project_stats$`Engine Type`)
+```
+
+```{r}
+t
+```
+
+```{r}
+data <- data.frame(t)
+```
+
+```{r}
+data
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+ggplot(data, aes(y = Freq, x=Var2))+ 
+    geom_bar(aes(fill=Var1),position="dodge", stat="identity",)
+```
+
+```{r}
+mean(project_stats$Year, na.rm = T)
+```
+
+```{r}
+mean(project_stats$Price, na.rm = T)
+```
+
+```{r}
+mean(project_stats$Mileage, na.rm = T)
+```
+
+```{r}
+mean(project_stats$EngineV, na.rm = T)
+```
+
+```{r}
+median(project_stats$Year)
+```
+
+```{r}
+median(project_stats$Mileage)
+```
+
+```{r}
+median(project_stats$Price)
+```
+
+```{r}
+median(project_stats$EngineV)
+```
+
+
+```{r}
+mode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+ } 
+```
+
+```{r}
+mode(project_stats$Brand)
+```
+
+```{r}
+mode(project_stats$Body)
+```
+
+```{r}
+mode(project_stats$`Engine Type`)
+```
+
+```{r}
+mode(project_stats$Model)
+```
+
+```{r}
+quantile(project_stats$Price, probs = seq(0, 1, 0.01))
+```
+
+```{r}
+quantile(project_stats$Year, probs = seq(0, 1, 0.01))
+```
+
+```{r}
+quantile(project_stats$Mileage, probs = seq(0, 1, 0.01))
+```
+
+```{r}
+quantile(project_stats$Price, probs = seq(0, 1, 0.1))
+```
+
+```{r}
+quantile(project_stats$Year, probs = seq(0, 1, 0.1))
+```
+
+```{r}
+quantile(project_stats$Mileage, probs = seq(0, 1, 0.1))
+```
+
+```{r}
+quantile(project_stats$Price, probs = seq(0, 1, 0.25))
+```
+
+```{r}
+quantile(project_stats$Year, probs = seq(0, 1, 0.25))
+```
+
+```{r}
+quantile(project_stats$Mileage, probs = seq(0, 1, 0.25))
+```
+
+```{r}
+
+```
+
