@@ -2,6 +2,7 @@
 This dataset was placed as frequency table then the quantitative data was illustrated in histograms and scatter plot, but for the qualitative variables it was illustrated in bar charts.
 Then the 5 numbers summary was calculated (min, max, Q1, Q3, central location). 
 After the analysis we did the hypothesis testing in which we used the t test.
+
 Here is some pictures from the output
 
 ![image](https://user-images.githubusercontent.com/100274164/233793956-81f836e4-223a-4aa3-b9b1-4b13b4e70dd1.png)
